@@ -5,9 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Inventory<T extends Item> {
+    protected Object id;
     HashMap<String,T> map = new HashMap<>();
     Inventory(HashMap<String,T> map){
-        this.map = map;
+        this.map = new HashMap<>();
     }
     public void AddItem(T item) throws InvalidQuantityException,DuplicateItemException{
         if(item.quantity<0){
